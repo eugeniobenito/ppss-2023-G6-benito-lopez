@@ -1,0 +1,20 @@
+RUN CONFIGURATIONS:
+
+
+- Run CineTest: 
+	mvn clean test -Dtest=CineTest -DexcludedGroups=parametrizado
+
+- Run FicheroTextoTest sin excluidos: 
+	mvn test -Dtest=FicheroTextoTest -DexcludedGroups=excluido
+
+- Run DataArrayTest: 
+	mvn test -Dtest=DataArrayTest
+
+- Run Parametrizados con excepciones: 
+	mvn test -Dgroups=parametrizado&conExcepciones
+
+- Run Parametrizados: 
+	mvn test -Dgroups=parametrizado
+
+- Run todos: 
+	mvn test -DexcludedGroups=parametrizado,excluido
