@@ -11,7 +11,7 @@
           <option name="goals">
             <list>
               <option value="test" />
-              <option value="-Dtest=GestorLlamadasTest" />
+              <option value="-Dtest=ejercicio1.GestorLlamadasTest" />
             </list>
           </option>
           <option name="pomFileName" />
