@@ -7,7 +7,8 @@ import java.time.LocalDate;
 *   - No podemos añadir parámetros a la SUT
 *   - No podemos usar una clase Factoría
 *   SOLUCIÓN: Factoría local para crear el objeto IService
-*       y setter para añadir una implementación alternativa del objeto Calendario*/
+*       y setter para añadir una implementación alternativa del objeto Calendario
+*       CORRECCIÓN: el setter no es necesario porque el atributo es protected*/
 
 public class AlquilaCoches {
     protected Calendario calendario = new Calendario();

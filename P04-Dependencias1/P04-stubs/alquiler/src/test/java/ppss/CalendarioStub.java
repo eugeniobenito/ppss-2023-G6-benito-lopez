@@ -15,6 +15,7 @@ public class CalendarioStub extends Calendario {
     public boolean es_festivo(LocalDate dia) {
         int diaInt = dia.getDayOfMonth();
 
+        // TODO: Aquí deberíamos ahorrarnos los bucles, debemos usar ArrayList
         // Verificar si el día está en el array de días con excepción
         for (int fechaExcepcion : diasConExcepcion) {
             if (diaInt == fechaExcepcion) {
