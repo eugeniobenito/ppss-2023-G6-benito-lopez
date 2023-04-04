@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ppss</groupId>
+  <artifactId>hotel</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>hotel</name>
+  <modules>
+    <module>hotelDatabase</module>
+    <module>hotelWebApp</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- A partir de Maven 3, especificar esta propiedad es obligatorio -->
+    <maven.compiler.release>11</maven.compiler.release>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId> <!-- También añadimos este plugin porque necesitamos esta versión para poder usar el JDK 11 -->
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+      </plugin>
+      <!--JUnit 5 requires Surefire version 2.22.0 or higher-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId> <!-- Este plugin viene incluido por defecto al usar el empaquetado.jar, pero lo incluimos porque la versiñon mínima que necesita... -->
+        <version>3.0.0-M8</version>                                                                          <!-- ...JUnit5 para compilar nuestros tests -->
+      </plugin>
+    </plugins>
+  </build>
+</project>
