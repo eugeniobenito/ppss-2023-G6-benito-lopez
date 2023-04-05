@@ -6,4 +6,32 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>matriculacion</name>
+  <modules>
+    <module>matriculacion-comun</module>
+    <module>matriculacion-dao</module>
+    <module>matriculacion-proxy</module>
+    <module>matriculacion-bo</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- A partir de Maven 3, especificar esta propiedad es obligatorio -->
+    <maven.compiler.release>11</maven.compiler.release>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId> <!-- También añadimos este plugin porque necesitamos esta versión para poder usar el JDK 11 -->
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+      </plugin>
+      <!--JUnit 5 requires Surefire version 2.22.0 or higher-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId> <!-- Este plugin viene incluido por defecto al usar el empaquetado.jar, pero lo incluimos porque la versiñon mínima que necesita... -->
+        <version>3.0.0-M8</version>                                                                          <!-- ...JUnit5 para compilar nuestros tests -->
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
